@@ -11,6 +11,12 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "paths": {
+      "ngx-list-page-with-filters": [
+        "dist/ngx-list-page-with-filters/ngx-list-page-with-filters",
+        "dist/ngx-list-page-with-filters"
+      ]
+    },
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,

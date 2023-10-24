@@ -1,7 +1,52 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "cli": {
+    "analytics": "1eff2cd3-e79d-4b08-bc0e-ca303226e76f",
+    "defaultCollection": "@angular-eslint/schematics"
+  },
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-  }
+    "ngx-list-page-with-filters": {
+      "projectType": "library",
+      "root": "projects/ngx-list-page-with-filters",
+      "sourceRoot": "projects/ngx-list-page-with-filters/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "project": "projects/ngx-list-page-with-filters/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/ngx-list-page-with-filters/tsconfig.lib.prod.json"
+            },
+            "development": {
+              "tsConfig": "projects/ngx-list-page-with-filters/tsconfig.lib.json"
+            }
+          },
+          "defaultConfiguration": "production"
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/ngx-list-page-with-filters/src/test.ts",
+            "tsConfig": "projects/ngx-list-page-with-filters/tsconfig.spec.json",
+            "karmaConfig": "projects/ngx-list-page-with-filters/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-eslint/builder:lint",
+          "options": {
+            "lintFilePatterns": [
+              "projects/ngx-list-page-with-filters/**/*.ts",
+              "projects/ngx-list-page-with-filters/**/*.html"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "ngx-list-page-with-filters"
 }
